@@ -9,6 +9,7 @@ matrix/array structure to represent data.
 DOCLINES = __doc__.split("\n")
 
 import sys
+
 from setuptools import setup
 
 # Check Python version
@@ -41,6 +42,8 @@ MINOR = 1
 MICRO = 0
 ISRELEASED = False
 VERSION = '{}.{}.{}'.format(MAJOR, MINOR, MICRO)
+
+
 # VERSION = '%d.%d.%d' % (MAJOR, MINOR, MICRO)
 
 def setup_package():
@@ -66,8 +69,8 @@ def setup_package():
         maintainer_email="gatechzhu@gmail.com",
         description=DOCLINES[0],
         long_description="\n".join(DOCLINES[2:]),
-        url="hhttps://github.com/gatechzhu/ricker",
-        download_url="https://github.com/gatechzhu/ricker/releases/",
+        url="https://github.com/gatechzhu/ricker",
+        download_url="https://github.com/gatechzhu/ricker/release",
         license='MIT',
         classifiers=[_f for _f in CLASSIFIERS.split('\n') if _f],
         platforms=["Windows", "Linux", "Solaris", "Mac OS-X", "Unix"],
