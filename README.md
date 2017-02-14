@@ -1,5 +1,6 @@
 # Ricker Wavelet Generator
 
+[![PyPI version](https://badge.fury.io/py/ricker.svg)](https://badge.fury.io/py/ricker) 
 [![Build Status](https://travis-ci.org/gatechzhu/ricker.svg?branch=master)](https://travis-ci.org/gatechzhu/ricker)
 
 ## Introduction
@@ -14,11 +15,18 @@ support py34 and up due to syntax conventions (mainly function annotation).
 Anyone can fork this repo and do some modification so that it will work 
 perfectly fine in py33 and below.
 
+### From PyPI
+```
+pip install ricker
+```
+
 ### From source file
-Under the root directory, type:
+Download srouce file from [releases page](https://github.com/gatechzhu/ricker/releases). Under the root directory, type:
 
 ```
 python setup.py install
 ```
+
+## Contact
 
 In counter of any trouble, contact *gatechzhu@gmail.com*
