@@ -4,13 +4,24 @@ from ricker.ricker import ricker
 
 
 class TestRicker:
-    def test_output_number(self):
-        assert len(ricker()) == 2
-
     def test_default_output(self):
-        t, s = ricker()
-        assert len(t) == len(s)
+        dt = 0.002
+        length = 1
+        s = ricker(len=length, dt=dt)
+        assert len(s) == int(length / dt)
 
-    def test_error(self):
+    def test_input_check_f(self):
         with pytest.raises(ValueError):
             ricker(f=0)
+
+    def test_input_check_len(self):
+        with pytest.raises(ValueError):
+            ricker(len=0)
+
+    def test_input_check_dt(self):
+        with pytest.raises(ValueError):
+            ricker(dt=0)
+
+    def test_input_len_peak_loc(self):
+        with pytest.warns(UserWarning):
+            ricker(len=1, peak_loc=2)
