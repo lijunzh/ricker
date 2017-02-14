@@ -10,7 +10,7 @@ DOCLINES = __doc__.split("\n")
 
 import sys
 
-from setuptools import setup
+from setuptools import setup, find_packages
 
 # Check Python version
 # if sys.version_info[:2] < (2, 6) or (3, 0) <= sys.version_info[0:2] < (3, 2):
@@ -39,7 +39,7 @@ Operating System :: MacOS
 
 MAJOR = 0
 MINOR = 1
-MICRO = 0
+MICRO = 1
 ISRELEASED = False
 VERSION = '{}.{}.{}'.format(MAJOR, MINOR, MICRO)
 
@@ -75,6 +75,7 @@ def setup_package():
         classifiers=[_f for _f in CLASSIFIERS.split('\n') if _f],
         platforms=["Windows", "Linux", "Solaris", "Mac OS-X", "Unix"],
         test_suite='tests',
+        packages=find_packages(),
         setup_requires=build_requires,
         install_requires=build_requires,
         tests_require=build_requires + ['pytest'],
