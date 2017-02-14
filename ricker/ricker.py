@@ -42,8 +42,8 @@ def ricker(f: float = 10, len: float = 0.5, dt: float = 0.002,
         # and peak location
         t = np.linspace(-peak_loc, len - peak_loc - dt, int(len / dt))
 
-        # Shift signal to the correct location
-        t_out = t + peak_loc  # time shift Ricker wavelet based on peak_loc
+        # Shift time to the correct location
+        # t_out = t + peak_loc  # time shift Ricker wavelet based on peak_loc
 
         # Generate Ricker wavelet signal based on reference
         y = (1 - 2 * np.pi ** 2 * f ** 2 * t ** 2) * np.exp(
