@@ -28,7 +28,7 @@ install:
   # Replace dep1 dep2 ... with your dependencies
   - conda create -q -n test-environment python=$TRAVIS_PYTHON_VERSION
   - source activate test-environment
-  - conda install numpy pytest numba matplotlib pyqtgraph
+  - conda install numpy pytest
   - python setup.py install
 
   # Test the building of your recipe in conda build
