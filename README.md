@@ -10,11 +10,6 @@
 - [NumPy](http://www.numpy.org/)
 
 ## Installation
-The main program should run under py26, py27, py33, py34; however, I only 
-support py34 and up due to syntax conventions (mainly function annotation). 
-Anyone can fork this repo and do some modification so that it will work 
-perfectly fine in py33 and below.
-
 ### From PyPI
 ```
 pip install ricker

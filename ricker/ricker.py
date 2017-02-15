@@ -3,8 +3,7 @@ import warnings
 import numpy as np
 
 
-def ricker(f: float = 10, len: float = 0.5, dt: float = 0.002,
-           peak_loc: float = 0.25) -> np.ndarray:
+def ricker(f=10, len=0.5, dt=0.002, peak_loc=0.25):
     """ricker creates a shifted causal ricker wavelet (Maxican hat).
 
     :param f: center frequency of Ricker wavelet (default 10)
