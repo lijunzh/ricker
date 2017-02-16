@@ -13,10 +13,10 @@ import sys
 from setuptools import setup, find_packages
 
 # Check Python version
-# if sys.version_info[:2] < (2, 6) or (3, 0) <= sys.version_info[0:2] < (3, 2):
-#     raise RuntimeError("Python version 2.6, 2.7 or >= 3.2 required.")
-if sys.version_info < (3, 4):
-    raise RuntimeError("Python version >= 3.4 required.")
+if sys.version_info[:2] < (2, 6) or (3, 0) <= sys.version_info[0:2] < (3, 2):
+    raise RuntimeError("Python version 2.6, 2.7 or >= 3.2 required.")
+# if sys.version_info < (3, 4):
+#     raise RuntimeError("Python version >= 3.4 required.")
 
 CLASSIFIERS = """\
 Development Status :: 2 - Pre-Alpha
