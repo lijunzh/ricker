@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools>=61.0", "setuptools_scm>=8"]
+requires = ["setuptools>=77.0", "setuptools_scm>=8"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -10,30 +10,31 @@ readme = "README.md"
 authors = [
     { name = "Lijun Zhu", email = "gatechzhu@gmail.com" }
 ]
-license = { file = "LICENSE" }
+license = "MIT"
+license-files = ["LICENSE"]
 requires-python = ">=3.10"
 classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Science/Research",
-    "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
     "Topic :: Scientific/Engineering",
     "Topic :: Scientific/Engineering :: Physics",
     "Typing :: Typed",
 ]
 dependencies = [
-    "numpy",
+    "numpy>=1.24",
 ]
 
 [dependency-groups]
 dev = [
-    "pytest>=8.3.5",
-    "ruff>=0.9",
-    "pre-commit>=4.0",
+    "pytest>=9.0",
+    "ruff>=0.15",
+    "pre-commit>=4.5",
 ]
 
 [tool.setuptools_scm]
