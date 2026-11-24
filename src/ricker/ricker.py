@@ -13,6 +13,8 @@ def ricker(
     duration: float = 0.5,
     dt: float = 0.002,
     peak_loc: float = 0.25,
+    *,
+    len: float | None = None,
 ) -> NDArray[np.floating]:
     """Generate a shifted causal Ricker wavelet (Mexican hat).
 
@@ -26,6 +28,9 @@ def ricker(
         Time sampling interval in seconds (default ``0.002``).
     peak_loc : float
         Location of the wavelet peak in seconds (default ``0.25``).
+    len : float, optional
+        Deprecated alias for *duration*, the name used up to 0.1.2. Passing
+        it emits a ``DeprecationWarning``.
 
     Returns
     -------
@@ -36,12 +41,24 @@ def ricker(
     ------
     ValueError
         If *f*, *duration*, or *dt* are not positive.
+    TypeError
+        If both *len* and a non-default *duration* are given.
 
     Notes
     -----
     The returned signal always starts at *t = 0*.  For a different starting
     point, shift the corresponding time vector instead.
     """
+    if len is not None:
+        if duration != 0.5:
+            raise TypeError("Pass duration or the deprecated len, not both.")
+        warnings.warn(
+            "ricker(len=...) is deprecated; use duration=... instead.",
+            DeprecationWarning,
+            stacklevel=2,
+        )
+        duration = len
+
     if f <= 0:
         raise ValueError("Centre frequency (f) must be positive.")
     if duration <= 0:

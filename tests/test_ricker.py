@@ -65,3 +65,23 @@ class TestWavelet:
         low_width = np.sum(low_f > 0.5 * np.max(low_f))
         high_width = np.sum(high_f > 0.5 * np.max(high_f))
         assert high_width < low_width
+
+
+class TestDeprecatedLen:
+    """The 0.1.x keyword ``len`` still works, with a warning."""
+
+    def test_len_matches_duration(self):
+        with pytest.warns(DeprecationWarning, match="duration"):
+            old = ricker(f=25, len=0.2, dt=0.001, peak_loc=0.1)
+        new = ricker(f=25, duration=0.2, dt=0.001, peak_loc=0.1)
+        np.testing.assert_array_equal(old, new)
+
+    def test_positional_arguments_unchanged(self):
+        np.testing.assert_array_equal(
+            ricker(10, 0.4, 0.002, 0.2),
+            ricker(f=10, duration=0.4, dt=0.002, peak_loc=0.2),
+        )
+
+    def test_rejects_len_and_duration(self):
+        with pytest.raises(TypeError, match="not both"):
+            ricker(duration=0.3, len=0.2)
