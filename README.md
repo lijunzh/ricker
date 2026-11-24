@@ -26,8 +26,8 @@ maintained so that it keeps installing and working. What to expect:
 - **Bug reports and pull requests** are welcome. Review may be slow, and
   new features are unlikely to be merged.
 
-The PyPI release (0.1.2, 2017) names the length parameter `len`; the
-code here and the examples below call it `duration`.
+Up to 0.1.2 the length parameter was called `len`. It still works as a
+deprecated alias for `duration`. See the [changelog](CHANGELOG.md).
 
 ## Installation
 
