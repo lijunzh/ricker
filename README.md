@@ -13,6 +13,22 @@ The [Ricker wavelet](http://wiki.seg.org/wiki/Dictionary:Ricker_wavelet)
 offers a basic generator, this package provides a shifted, causal Ricker
 wavelet with configurable peak location — ready for seismic modelling.
 
+## Project status: maintenance mode
+
+ricker is feature-complete, and no new features are planned. It stays
+maintained so that it keeps installing and working. What to expect:
+
+- **Compatibility fixes** ship as patch releases when a new Python or NumPy
+  version breaks something. CI tests Python 3.10–3.14.
+- **Dependencies:** ricker sets no upper version limits, so NumPy fixes
+  reach you through your own `pip` or `uv` upgrade, without a new ricker
+  release. Dependabot keeps the CI and development tools current.
+- **Bug reports and pull requests** are welcome. Review may be slow, and
+  new features are unlikely to be merged.
+
+The PyPI release (0.1.2, 2017) names the length parameter `len`; the
+code here and the examples below call it `duration`.
+
 ## Installation
 
 ### From PyPI
